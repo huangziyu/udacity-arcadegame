@@ -1,6 +1,8 @@
 前端纳米学位街机游戏项目
 ===============================
 
-学生应该用这个[评审标准](https://review.udacity.com/#!/projects/2696458597/rubric)来自我检查自己提交的代码。 确认自己写的函数要是**面向对象的** -  要么是类函数（就像函数 Player 和 Enemy）要么是类的原型链上的函数比如 Enemy.prototype.checkCollisions ， 在类函数里面或者类的原型链函数里面适当的使用关键词 'this' 来引用调用该函数的对象实例。最后保证你的**readme.md**文件要写明关于如何运行和如何玩你的街机游戏的指引。
+如何运行游戏
+下载这个库到本地，使用浏览器打开index.html文件即可。
 
-关于如何开始这个项目的更详细的指导，可以查阅这一份[指南](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true)
+如何玩这个游戏
+游戏的目标是使小人成功到达尽头的水面，使用键盘上的方向键来控制小人，注意躲避出现的敌人，如果你控制的小人碰到敌人，小人将重新回到起始位置，到达水面后，游戏会显示success字样。
