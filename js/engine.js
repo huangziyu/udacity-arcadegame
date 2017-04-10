@@ -65,8 +65,22 @@ var Engine = (function(global) {
      */
     function update(dt) {
         updateEntities(dt);
-        // checkCollisions();
+        checkCollisions();
     }
+
+    /*做碰撞检测的函数，若玩家和敌人的位置重合则重设玩家的位置
+    */
+    function checkCollisions(){
+        for (var i = 0; i < allEnemies.length; i++) {
+            if ((allEnemies[i].x) <= player.x + 50 &&
+            (allEnemies[i].x + 50) >= (player.x) &&
+            (allEnemies[i].y)<= player.y + 50 &&
+            (allEnemies[i].y + 50) >= (player.y)) {
+                player.reset();
+            }
+        }
+    }
+
 
     /* 这个函数会遍历在 app.js 定义的存放所有敌人实例的数组，并且调用他们的 update()
      * 函数，然后，它会调用玩家对象的 update 方法，最后这个函数被 update 函数调用。
@@ -128,8 +142,21 @@ var Engine = (function(global) {
      * 从新开始游戏的按钮，也可以是一个游戏结束的画面，或者其它类似的设计。它只会被 init()
      * 函数调用一次。
      */
-    function reset() {
+    function reset(gamestatus) {
         // 空操作
+        switch (gamestatus) {
+          case 0:
+
+            break;
+          case 1:
+
+            break;
+          case 2:
+
+            break;
+          default:
+
+        }
     }
 
     /* 紧接着我们来加载我们知道的需要来绘制我们游戏关卡的图片。然后把 init 方法设置为回调函数。
