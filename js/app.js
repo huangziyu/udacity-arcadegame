@@ -82,9 +82,9 @@ Player.prototype.reset = function(){
 // 把所有敌人的对象都放进一个叫 allEnemies 的数组里面
 // 把玩家对象放进一个叫 player 的变量里面
 
-var enemy1 = new Enemy(0, 60);
-var enemy2 = new Enemy(0, 145);
-var enemy3 = new Enemy(0, 225);
+var enemy1 = new Enemy(0, 60);//第一行的敌人
+var enemy2 = new Enemy(0, 145);//第二行的敌人
+var enemy3 = new Enemy(0, 225);//第三行的敌人
 
 var allEnemies = [enemy1, enemy2, enemy3];
 
