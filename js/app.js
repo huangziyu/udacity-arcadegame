@@ -10,7 +10,6 @@ var Enemy = function(x,y) {
     this.speed = Math.floor(Math.random()*100+100);
     // 敌人的图片或者雪碧图，用一个我们提供的工具函数来轻松的加载文件
     this.sprite = 'images/enemy-bug.png';
-
 };
 
 // 此为游戏必须的函数，用来更新敌人的位置
@@ -36,17 +35,15 @@ var Player = function(x,y){
     this.x = x;
     this.y = y;
     this.sprite = 'images/char-boy.png';
-
 };
 // 用于更新玩家位置的函数
-// 参数: dt, 表示时间间隙
-Player.prototype.update = function(dt){
+// 检测玩家是否到达水域
+Player.prototype.update = function(){
     // 若玩家到达水域便重设玩家位置并且提示游戏胜利
     if (this.y<0) {
         gamestatus = 1;
         this.reset();
     }
-
 };
 
 Player.prototype.render = function() {
@@ -61,16 +58,16 @@ Player.prototype.render = function() {
 
 Player.prototype.handleInput = function(key){
     if(key === 'left' && this.x > 0){
-        this.x -= 100;
+        this.x -= 101;
     }
     if(key === 'up' && this.y > 0){
-        this.y -= 85;
+        this.y -= 83;
     }
     if(key === 'right' && this.x < 400){
-        this.x += 100;
+        this.x += 101;
     }
     if(key === 'down' && this.y < 400){
-        this.y += 85;}
+        this.y += 83;}
 };
 
 // 用于重设玩家位置的函数
