@@ -1,6 +1,34 @@
 //全局变量用于表征游戏状态
 var gamestatus = 0;
 
+
+// 角色的类
+var Character = function(x, y, sprite) {
+    this.x = x;
+    this.y = y;
+     this.sprite = sprite;
+};
+
+// 此为游戏必须的函数，用来在屏幕上画出角色
+Character.prototype.render = function() {
+    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+};
+
+var Enemy = function(x,y,speed) {
+    var enemy = Object.create(Enemy.prototype);
+
+     //调用 Character 设置 enemy 的属性
+     Character.call(enemy, x, y, 'images/enemy-bug.png');
+
+     enemy.speed = Math.floor(Math.random()*100+100);
+    return enemy;
+};
+
+// 继承 Character 类
+Enemy.prototype = Object.create(Character.prototype);
+Enemy.prototype.constructor = Enemy;
+
+/*
 // 这是我们的玩家要躲避的敌人
 var Enemy = function(x,y) {
     // 要应用到每个敌人的实例的变量写在这里
@@ -12,6 +40,12 @@ var Enemy = function(x,y) {
     this.sprite = 'images/enemy-bug.png';
 };
 
+// 此为游戏必须的函数，用来在屏幕上画出敌人，
+Enemy.prototype.render = function() {
+    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+};
+*/
+
 // 此为游戏必须的函数，用来更新敌人的位置
 // 参数: dt ，表示时间间隙
 Enemy.prototype.update = function(dt) {
@@ -22,11 +56,6 @@ Enemy.prototype.update = function(dt) {
     if (this.x>500) {
         this.x=0;
     }
-};
-
-// 此为游戏必须的函数，用来在屏幕上画出敌人，
-Enemy.prototype.render = function() {
-    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
 // 现在实现你自己的玩家类
