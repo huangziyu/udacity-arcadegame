@@ -1,0 +1,24 @@
+{
+  "name": "arcadegame",
+  "version": "1.0.0",
+  "description": "前端纳米学位街机游戏项目 ===============================",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huangziyu/udacity-arcadegame.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/huangziyu/udacity-arcadegame/issues"
+  },
+  "homepage": "https://github.com/huangziyu/udacity-arcadegame#readme",
+  "devDependencies": {
+    "eslint": "^4.8.0",
+    "eslint-config-udacity": "^2.0.2",
+    "eslint-plugin-import": "^2.7.0"
+  }
+}
