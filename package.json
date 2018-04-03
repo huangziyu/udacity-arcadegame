@@ -4,7 +4,8 @@
   "description": "前端纳米学位街机游戏项目 ===============================",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "node_modules/.bin/eslint js/*.js"
   },
   "repository": {
     "type": "git",
