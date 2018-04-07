@@ -1,6 +1,5 @@
 'use strict';
 
-//全局变量用于表征游戏状态
 var gamestatus = 0;
 
 // 角色的类
